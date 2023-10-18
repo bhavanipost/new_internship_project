@@ -19,16 +19,16 @@ def browser_init(context):
     # context.driver = webdriver.Chrome(service=service)
     #context.driver.maximize_window()
     ### OTHER BROWSERS ###
-    service = Service(executable_path='/Users/bhavani/Downloads/internship_project_BR/geckodriver')
-    context.driver = webdriver.Firefox(service=service)
+    # service = Service(executable_path='/Users/bhavani/Downloads/internship_project_BR/geckodriver')
+    # context.driver = webdriver.Firefox(service=service)
     # context.driver = webdriver.Safari()
 
     # HEADLESS MODE ####
-    # options = webdriver.ChromeOptions()
-    # options.add_argument('--headless')
-    # service = Service(executable_path='/Users/bhavani/Downloads/internship_project_BR/chromedriver')
-    # context.driver = webdriver.Chrome(options=options, service=service)
-    # context.driver.set_window_size(1920,1080)
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')
+    service = Service(executable_path='/Users/bhavani/Downloads/internship_project_BR/chromedriver')
+    context.driver = webdriver.Chrome(options=options, service=service)
+    context.driver.set_window_size(1920,1080)
 
     # BROWSERSTACK ###
     # Register for BrowserStack, then grab it from https://www.browserstack.com/accounts/settings
