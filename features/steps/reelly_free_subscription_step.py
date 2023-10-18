@@ -1,4 +1,6 @@
 from behave import given, when, then
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 
@@ -18,9 +20,23 @@ def login_to_webpage(context):
     context.app.login_page.click_continue()
 
 
+@when('Wait for 3 sec')
+def wait_sec(context):
+    sleep((3))
+
+
 @then("Click on Get a free subscription")
 def click_free_subscription(context):
     context.app.main_web_page.free_subscription_click()
+
+
+# @then("Click on Get a free subscription")
+# def click_free_subscription(context):
+#     context.driver.wait.until(
+#         EC.visibility_of_element_located(FREE_SUBSCRIPTION),
+#         message='free subscription btn not clickable'
+#     ).click()
+#     context.app.main_web_page.free_subscription_click()
 
 
 @then("Switch to the new tab")
