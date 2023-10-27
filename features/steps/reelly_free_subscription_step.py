@@ -20,15 +20,19 @@ def login_to_webpage(context):
     context.app.login_page.click_continue()
 
 
-@when('Wait for 3 sec')
-def wait_sec(context):
-    sleep((3))
+# @when('Wait for 3 sec')
+# def wait_sec(context):
+#     sleep((3))
 
 
-@then("Click on Get a free subscription")
-def click_free_subscription(context):
-    context.app.main_web_page.free_subscription_click()
+# @then("Click on Get a free subscription")
+# def click_free_subscription(context):
+#     context.app.main_web_page.free_subscription_click()
 
+@then('Click on settings menu')
+def click_setting_menu(context):
+    context.app.main_web_page.click_setting_menu()
+    context.app.main_web_page.click_connect_the_company()
 
 # @then("Click on Get a free subscription")
 # def click_free_subscription(context):
